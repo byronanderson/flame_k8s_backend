@@ -187,6 +187,7 @@ defmodule FLAMEK8sBackend.RunnerPodTemplate do
     |> update_in(["spec", "containers", Access.at(0)], fn container ->
       container
       |> Map.put("image", app_container["image"])
+      |> Map.put("imagePullPolicy", app_container["imagePullPolicy"])
       |> Map.put("name", runner_pod_name)
       |> Map.put_new("env", [])
       |> Map.update!("env", fn env ->
