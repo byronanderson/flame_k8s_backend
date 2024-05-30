@@ -250,7 +250,7 @@ defmodule FLAMEK8sBackend do
     req = K8sClient.connect()
     namespace = System.get_env("POD_NAMESPACE")
     name = System.get_env("POD_NAME")
-    K8sClient.delete_pod!(req, namespace, name)
+    # K8sClient.delete_pod!(req, namespace, name)
     System.stop()
   end
 
